@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Quatro controles de qualidade de uma obra industrial, da identificação de equipamentos à reconferência de desvios.">
+  <title>Painel de Controle de Qualidade</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Painel de Controle de Qualidade">
+  <meta property="og:description" content="Quatro demonstrações interativas de controle de qualidade em uma obra industrial.">
+  <meta property="og:url" content="https://painel-de-controle-de-qualidade.pages.dev/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Painel de Controle de Qualidade">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="navegacao.js"></script>
+  <script src="indicadores.js" defer></script>
+  <script src="manometros.js" defer></script>
+  <script src="paginacao.js" defer></script>
+  <script src="tags.js" defer></script>
+  <script src="plaquinhas-clp.js" defer></script>
+</head>
+<body>
+  <header class="hero" id="inicio" tabindex="-1">
+    <div class="container">
+      <p class="eyebrow">Qualidade em obra industrial</p>
+      <h1>Painel de Controle de Qualidade</h1>
+      <p class="intro">Como analista de qualidade em uma obra industrial, acompanhei trocas de instrumentos, instalação de identificações em equipamentos e reconferências de desvios. Este painel apresenta os quatro controles com exemplos ilustrativos.</p>
+      <a class="button button-light" href="#controles">Conhecer os controles</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls" id="controles" aria-labelledby="controles-titulo" tabindex="-1">
+      <h2 id="controles-titulo">Controles da Obra</h2>
+
+      <div class="control-list">
+        <article class="control">
+          <h3>Manômetros e certificados</h3>
+          <div>
+            <p>Eu registrava quais manômetros tinham sido trocados e associava cada troca ao certificado correspondente. Assim, conseguia consultar o histórico de trocas e localizar o documento de cada instrumento.</p>
+            <a class="button" href="#demonstracao-manometros" aria-label="Ver demonstração de manômetros e certificados">Ver demonstração</a>
+          </div>
+        </article>
+
+        <article class="control">
+          <h3>Tags de equipamentos</h3>
+          <div>
+            <p>Eu acompanhava a instalação das tags, pequenas medalhas que identificavam os equipamentos. A lista ajudava a conferir quais equipamentos já estavam identificados.</p>
+            <a class="button" href="#demonstracao-tags" aria-label="Ver demonstração de tags de equipamentos">Ver demonstração</a>
+          </div>
+        </article>
+
+        <article class="control">
+          <h3>Plaquinhas de CLP</h3>
+          <div>
+            <p>Eu acompanhava o recebimento e a instalação das plaquinhas plásticas de identificação dos controladores lógicos programáveis (CLPs). Era um controle próprio porque a identificação desses controladores exigia uma conferência mais crítica.</p>
+            <a class="button" href="#demonstracao-clp" aria-label="Ver demonstração de plaquinhas de CLP">Ver demonstração</a>
+          </div>
+        </article>
+
+        <article class="control">
+          <h3>Reconferências</h3>
+          <div>
+            <p>Eu voltava aos desvios abertos para conferir se tinham sido resolvidos. Registrava <strong>OK</strong> quando o desvio estava sanado, <strong>NOK</strong> quando continuava sem solução e <strong>ON HOLD (em espera)</strong> quando aguardava alguma ação ou definição.</p>
+            <a class="button" href="#demonstracao">Ver demonstração</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="demo" id="demonstracao-manometros" aria-labelledby="manometros-titulo" tabindex="-1">
+      <h2 id="manometros-titulo">Demonstração de manômetros e certificados</h2>
+      <p>Dados fictícios. Escolha um manômetro para consultar a instalação e os certificados vinculados.</p>
+      <div class="filtro-mensal">
+        <label for="manometro">Manômetro</label>
+        <select id="manometro"></select>
+      </div>
+      <div aria-live="polite">
+        <dl class="resumo-manometro">
+          <div><dt>Local</dt><dd id="local-manometro"></dd></div>
+          <div><dt>Escala</dt><dd id="escala-manometro"></dd></div>
+          <div><dt>Instalação</dt><dd id="instalacao-manometro"></dd></div>
+        </dl>
+        <div class="indicadores">
+          <article class="indicador">
+            <h3>Certificado #1</h3>
+            <p class="contagem" id="certificado-1"></p>
+            <p id="observacao-1"></p>
+          </article>
+          <article class="indicador">
+            <h3>Certificado #2</h3>
+            <p class="contagem" id="certificado-2"></p>
+            <p id="observacao-2"></p>
+          </article>
+        </div>
+      </div>
+      <p class="demo-navigation">
+        <a class="button" href="#controles">Voltar para Controles da Obra</a>
+        <a class="button" href="#inicio">Voltar para início da página</a>
+      </p>
+    </section>
+
+    <section class="demo" id="demonstracao-tags" aria-labelledby="tags-titulo" tabindex="-1">
+      <h2 id="tags-titulo">Demonstração de tags de equipamentos</h2>
+      <p>Dados fictícios. Consulte a identificação dos equipamentos por situação de instalação.</p>
+      <div class="filtro-mensal filtro-tags">
+        <label for="situacao-tag">Situação</label>
+        <select id="situacao-tag">
+          <option value="">Todas</option>
+          <option>Instalada</option>
+          <option>Não instalada</option>
+          <option value="NA">Dispensada (NA)</option>
+        </select>
+      </div>
+      <div class="indicadores" id="indicadores-tags" aria-live="polite">
+        <article class="indicador" data-status-lista="Instalada">
+          <h3>Instaladas</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+        </article>
+        <article class="indicador" data-status-lista="Não instalada">
+          <h3>Não instaladas</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+        </article>
+        <article class="indicador" data-status-lista="NA">
+          <h3>Dispensadas (NA)</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+          <p>A instalação da tag deixou de ser necessária.</p>
+        </article>
+      </div>
+      <p>Cada percentual usa o total de registros de tags da base, mesmo com o filtro ativo.</p>
+      <details class="planilha-demo">
+        <summary><span class="planilha-mostrar">Mostrar planilha</span><span class="planilha-ocultar">Ocultar planilha</span></summary>
+        <p id="resumo-tags" role="status"></p>
+        <table class="tabela-tags" aria-label="Tags por situação">
+          <thead><tr><th scope="col">Tag</th><th scope="col">PID</th><th scope="col">Pacote</th><th scope="col">Situação</th></tr></thead>
+          <tbody id="lista-tags"></tbody>
+        </table>
+        <nav class="demo-navigation paginacao-tags" id="paginacao-tags" aria-label="Páginas de tags"></nav>
+      </details>
+      <p class="demo-navigation">
+        <a class="button" href="#controles">Voltar para Controles da Obra</a>
+        <a class="button" href="#inicio">Voltar para início da página</a>
+      </p>
+    </section>
+
+    <section class="demo" id="demonstracao-clp" aria-labelledby="clp-titulo" tabindex="-1">
+      <h2 id="clp-titulo">Demonstração de plaquinhas de CLP</h2>
+      <p>Dados fictícios. Consulte o recebimento e a instalação das plaquinhas de identificação.</p>
+      <div class="filtro-mensal filtro-tags">
+        <label for="situacao-clp">Situação</label>
+        <select id="situacao-clp">
+          <option value="">Todas</option>
+          <option>Aguardando recebimento</option>
+          <option>Recebida</option>
+          <option>Instalada</option>
+        </select>
+      </div>
+      <div class="indicadores" id="indicadores-clp" aria-live="polite">
+        <article class="indicador" data-status-lista="Aguardando recebimento">
+          <h3>Aguardando recebimento</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+        </article>
+        <article class="indicador" data-status-lista="Recebida">
+          <h3>Recebidas</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+          <p>Plaquinhas recebidas que aguardam instalação.</p>
+        </article>
+        <article class="indicador" data-status-lista="Instalada">
+          <h3>Instaladas</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+        </article>
+      </div>
+      <p>Cada percentual usa o total de plaquinhas previstas da base, mesmo com o filtro ativo.</p>
+      <details class="planilha-demo">
+        <summary><span class="planilha-mostrar">Mostrar planilha</span><span class="planilha-ocultar">Ocultar planilha</span></summary>
+        <p id="resumo-clp" role="status"></p>
+        <table class="tabela-tags" aria-label="Plaquinhas de CLP por situação">
+          <thead><tr><th scope="col">Tag da plaquinha</th><th scope="col">Situação</th><th scope="col">Instalação</th></tr></thead>
+          <tbody id="lista-clp"></tbody>
+        </table>
+        <nav class="demo-navigation paginacao-tags" id="paginacao-clp" aria-label="Páginas de plaquinhas de CLP"></nav>
+      </details>
+      <p class="demo-navigation">
+        <a class="button" href="#controles">Voltar para Controles da Obra</a>
+        <a class="button" href="#inicio">Voltar para início da página</a>
+      </p>
+    </section>
+
+    <section class="demo" id="demonstracao" aria-labelledby="demonstracao-titulo" tabindex="-1">
+      <h2 id="demonstracao-titulo">Demonstração de reconferências</h2>
+      <p>Identificadores e descrições fictícios. O filtro usa o mês previsto para a reconferência.</p>
+      <div class="filtro-mensal">
+        <label for="mes-reconferencia">Mês previsto</label>
+        <select id="mes-reconferencia"></select>
+      </div>
+      <div class="indicadores">
+        <article class="indicador" data-situacao="OK">
+          <h3>OK</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+          <p>Desvio sanado.</p>
+        </article>
+        <article class="indicador" data-situacao="NOK">
+          <h3>NOK</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+          <p>Desvio ainda sem solução.</p>
+        </article>
+        <article class="indicador" data-situacao="ON HOLD">
+          <h3>ON HOLD (em espera)</h3>
+          <p class="percentual"></p>
+          <p class="contagem"></p>
+          <p>A reconferência ficou em espera enquanto aguardava uma ação ou definição.</p>
+        </article>
+      </div>
+      <p>Os percentuais usam o total de registros classificados no mês. Registros sem classificação aparecem à parte.</p>
+      <p id="resumo-indicadores"></p>
+      <div id="anuncio-indicadores" class="somente-leitor" role="status"></div>
+      <a class="sample-link" href="amostra-reconferencias.csv" download>Baixar a amostra CSV</a>
+      <p class="demo-navigation">
+        <a class="button" href="#controles">Voltar para Controles da Obra</a>
+        <a class="button" href="#inicio">Voltar para início da página</a>
+      </p>
+    </section>
+  </main>
+  <footer class="rodape">
+    <div class="container">Desenvolvido por <strong>Matheus de Souza</strong></div>
+  </footer>
+</body>
+</html>
