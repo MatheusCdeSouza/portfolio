@@ -266,7 +266,6 @@ const registrosClp = [
   {"tag":"CLP-DEMO-264","situacao":"Instalada","instalacao":"OK"}
 ];
 
-const filtroClp = document.querySelector('#situacao-clp');
 const listaClp = document.querySelector('#lista-clp');
 const resumoClp = document.querySelector('#resumo-clp');
 const paginacaoClp = document.querySelector('#paginacao-clp');
@@ -274,11 +273,8 @@ const itensPorPaginaClp = 20;
 let paginaClp = 0;
 
 function mostrarClp() {
-  const filtradas = filtroClp.value
-    ? registrosClp.filter(({ situacao }) => situacao === filtroClp.value)
-    : registrosClp;
   const inicio = paginaClp * itensPorPaginaClp;
-  const visiveis = filtradas.slice(inicio, inicio + itensPorPaginaClp);
+  const visiveis = registrosClp.slice(inicio, inicio + itensPorPaginaClp);
 
   listaClp.replaceChildren(...visiveis.map(({ tag, situacao, instalacao }) => {
     const linha = document.createElement('tr');
@@ -291,8 +287,8 @@ function mostrarClp() {
   }));
 
   resumoClp.textContent = 'Mostrando ' + (inicio + 1) + '–' + (inicio + visiveis.length) +
-    ' de ' + filtradas.length + ' registros';
-  return mostrarPaginacao(paginacaoClp, Math.ceil(filtradas.length / itensPorPaginaClp), paginaClp, pagina => {
+    ' de ' + registrosClp.length + ' registros';
+  return mostrarPaginacao(paginacaoClp, Math.ceil(registrosClp.length / itensPorPaginaClp), paginaClp, pagina => {
     paginaClp = pagina;
     return mostrarClp();
   });
@@ -300,10 +296,5 @@ function mostrarClp() {
 
 const atualizarResumoClp = prepararIndicadoresDeSituacao('#indicadores-clp', registrosClp, 'plaquinhas previstas');
 
-filtroClp.addEventListener('change', () => {
-  atualizarResumoClp(filtroClp.value);
-  paginaClp = 0;
-  mostrarClp();
-});
 mostrarClp();
-atualizarResumoClp(filtroClp.value);
+atualizarResumoClp('');

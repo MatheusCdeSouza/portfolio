@@ -25,3 +25,18 @@ if (navigation?.type === 'reload') {
     });
   }, { once: true });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  for (const link of document.querySelectorAll('.control-list a[href^="#demonstracao"]')) {
+    const janela = document.querySelector(link.hash);
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      janela.showModal();
+    });
+
+    for (const retorno of janela.querySelectorAll('.demo-navigation a')) {
+      retorno.addEventListener('click', () => janela.close());
+    }
+  }
+});

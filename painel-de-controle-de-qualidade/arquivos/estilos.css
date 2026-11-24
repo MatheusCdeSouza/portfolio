@@ -329,3 +329,30 @@ html:not(.foco-por-ponteiro) .filtro-mensal select:focus-visible {
   color: #f4faf6;
   text-align: center;
 }
+
+.demo-janela {
+  width: min(66rem, calc(100% - 1.5rem));
+  max-height: calc(100% - 1.5rem);
+  margin: auto;
+  color: inherit;
+  overflow: auto;
+}
+
+.demo-janela::backdrop {
+  background: rgb(17 45 43 / 65%);
+}
+
+html:has(.demo-janela[open]) {
+  overflow: hidden;
+}
+
+.fechar-demo {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.fechar-demo button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}

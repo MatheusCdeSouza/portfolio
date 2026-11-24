@@ -6,9 +6,11 @@ Miniapresentação interativa sobre o trabalho de controle de qualidade em uma o
 
 ## O que você pode explorar
 
+Cada botão **Ver demonstração** abre uma janela na própria página.
+
 - **Manômetros e certificados** — seleção por instrumento e consulta aos certificados ilustrativos.
-- **Tags de equipamentos** — percentuais e lista por situação de instalação, incluindo tags dispensadas.
-- **Plaquinhas de CLP** — percentuais e lista por etapa de recebimento e instalação.
+- **Tags de equipamentos** — três percentuais de instalação, incluindo tags dispensadas, e planilha recolhível.
+- **Plaquinhas de CLP** — três percentuais de recebimento e instalação e planilha recolhível.
 - **Reconferências** — percentuais OK, NOK e ON HOLD (em espera), com filtro pelo mês previsto. Registros sem classificação aparecem à parte.
 
 Os nomes, identificadores, certificados e descrições são ilustrativos. A demonstração de reconferências preserva as datas previstas e as situações usadas para calcular os indicadores.

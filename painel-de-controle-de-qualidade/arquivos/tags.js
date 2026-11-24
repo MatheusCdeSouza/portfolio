@@ -2136,7 +2136,6 @@ const registrosTags = [
   {"tag":"TAG-DEMO-2134","pid":"PID-DEMO-0099","pacote":"Pacote fictício 7","situacao":"NA"}
 ];
 
-const filtroTags = document.querySelector('#situacao-tag');
 const listaTags = document.querySelector('#lista-tags');
 const resumoTags = document.querySelector('#resumo-tags');
 const paginacaoTags = document.querySelector('#paginacao-tags');
@@ -2144,11 +2143,8 @@ const itensPorPaginaTags = 20;
 let paginaTags = 0;
 
 function mostrarTags() {
-  const filtradas = filtroTags.value
-    ? registrosTags.filter(({ situacao }) => situacao === filtroTags.value)
-    : registrosTags;
   const inicio = paginaTags * itensPorPaginaTags;
-  const visiveis = filtradas.slice(inicio, inicio + itensPorPaginaTags);
+  const visiveis = registrosTags.slice(inicio, inicio + itensPorPaginaTags);
 
   listaTags.replaceChildren(...visiveis.map(({ tag, pid, pacote, situacao }) => {
     const linha = document.createElement('tr');
@@ -2161,8 +2157,8 @@ function mostrarTags() {
   }));
 
   resumoTags.textContent = 'Mostrando ' + (inicio + 1) + '–' + (inicio + visiveis.length) +
-    ' de ' + filtradas.length + ' registros';
-  return mostrarPaginacao(paginacaoTags, Math.ceil(filtradas.length / itensPorPaginaTags), paginaTags, pagina => {
+    ' de ' + registrosTags.length + ' registros';
+  return mostrarPaginacao(paginacaoTags, Math.ceil(registrosTags.length / itensPorPaginaTags), paginaTags, pagina => {
     paginaTags = pagina;
     return mostrarTags();
   });
@@ -2170,10 +2166,5 @@ function mostrarTags() {
 
 const atualizarResumoTags = prepararIndicadoresDeSituacao('#indicadores-tags', registrosTags, 'registros de tags');
 
-filtroTags.addEventListener('change', () => {
-  atualizarResumoTags(filtroTags.value);
-  paginaTags = 0;
-  mostrarTags();
-});
 mostrarTags();
-atualizarResumoTags(filtroTags.value);
+atualizarResumoTags('');

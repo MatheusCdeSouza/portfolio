@@ -68,7 +68,8 @@
       </div>
     </section>
 
-    <section class="demo" id="demonstracao-manometros" aria-labelledby="manometros-titulo" tabindex="-1">
+    <dialog class="demo demo-janela" id="demonstracao-manometros" aria-labelledby="manometros-titulo" >
+      <form method="dialog" class="fechar-demo"><button class="button" autofocus>Fechar demonstração</button></form>
       <h2 id="manometros-titulo">Demonstração de manômetros e certificados</h2>
       <p>Dados fictícios. Escolha um manômetro para consultar a instalação e os certificados vinculados.</p>
       <div class="filtro-mensal">
@@ -98,20 +99,12 @@
         <a class="button" href="#controles">Voltar para Controles da Obra</a>
         <a class="button" href="#inicio">Voltar para início da página</a>
       </p>
-    </section>
+    </dialog>
 
-    <section class="demo" id="demonstracao-tags" aria-labelledby="tags-titulo" tabindex="-1">
+    <dialog class="demo demo-janela" id="demonstracao-tags" aria-labelledby="tags-titulo" >
+      <form method="dialog" class="fechar-demo"><button class="button" autofocus>Fechar demonstração</button></form>
       <h2 id="tags-titulo">Demonstração de tags de equipamentos</h2>
       <p>Dados fictícios. Consulte a identificação dos equipamentos por situação de instalação.</p>
-      <div class="filtro-mensal filtro-tags">
-        <label for="situacao-tag">Situação</label>
-        <select id="situacao-tag">
-          <option value="">Todas</option>
-          <option>Instalada</option>
-          <option>Não instalada</option>
-          <option value="NA">Dispensada (NA)</option>
-        </select>
-      </div>
       <div class="indicadores" id="indicadores-tags" aria-live="polite">
         <article class="indicador" data-status-lista="Instalada">
           <h3>Instaladas</h3>
@@ -130,7 +123,7 @@
           <p>A instalação da tag deixou de ser necessária.</p>
         </article>
       </div>
-      <p>Cada percentual usa o total de registros de tags da base, mesmo com o filtro ativo.</p>
+      <p>Cada percentual usa o total de registros de tags da base.</p>
       <details class="planilha-demo">
         <summary><span class="planilha-mostrar">Mostrar planilha</span><span class="planilha-ocultar">Ocultar planilha</span></summary>
         <p id="resumo-tags" role="status"></p>
@@ -144,20 +137,12 @@
         <a class="button" href="#controles">Voltar para Controles da Obra</a>
         <a class="button" href="#inicio">Voltar para início da página</a>
       </p>
-    </section>
+    </dialog>
 
-    <section class="demo" id="demonstracao-clp" aria-labelledby="clp-titulo" tabindex="-1">
+    <dialog class="demo demo-janela" id="demonstracao-clp" aria-labelledby="clp-titulo" >
+      <form method="dialog" class="fechar-demo"><button class="button" autofocus>Fechar demonstração</button></form>
       <h2 id="clp-titulo">Demonstração de plaquinhas de CLP</h2>
       <p>Dados fictícios. Consulte o recebimento e a instalação das plaquinhas de identificação.</p>
-      <div class="filtro-mensal filtro-tags">
-        <label for="situacao-clp">Situação</label>
-        <select id="situacao-clp">
-          <option value="">Todas</option>
-          <option>Aguardando recebimento</option>
-          <option>Recebida</option>
-          <option>Instalada</option>
-        </select>
-      </div>
       <div class="indicadores" id="indicadores-clp" aria-live="polite">
         <article class="indicador" data-status-lista="Aguardando recebimento">
           <h3>Aguardando recebimento</h3>
@@ -176,7 +161,7 @@
           <p class="contagem"></p>
         </article>
       </div>
-      <p>Cada percentual usa o total de plaquinhas previstas da base, mesmo com o filtro ativo.</p>
+      <p>Cada percentual usa o total de plaquinhas previstas da base.</p>
       <details class="planilha-demo">
         <summary><span class="planilha-mostrar">Mostrar planilha</span><span class="planilha-ocultar">Ocultar planilha</span></summary>
         <p id="resumo-clp" role="status"></p>
@@ -190,9 +175,10 @@
         <a class="button" href="#controles">Voltar para Controles da Obra</a>
         <a class="button" href="#inicio">Voltar para início da página</a>
       </p>
-    </section>
+    </dialog>
 
-    <section class="demo" id="demonstracao" aria-labelledby="demonstracao-titulo" tabindex="-1">
+    <dialog class="demo demo-janela" id="demonstracao" aria-labelledby="demonstracao-titulo" >
+      <form method="dialog" class="fechar-demo"><button class="button" autofocus>Fechar demonstração</button></form>
       <h2 id="demonstracao-titulo">Demonstração de reconferências</h2>
       <p>Identificadores e descrições fictícios. O filtro usa o mês previsto para a reconferência.</p>
       <div class="filtro-mensal">
@@ -227,7 +213,7 @@
         <a class="button" href="#controles">Voltar para Controles da Obra</a>
         <a class="button" href="#inicio">Voltar para início da página</a>
       </p>
-    </section>
+    </dialog>
   </main>
   <footer class="rodape">
     <div class="container">Desenvolvido por <strong>Matheus de Souza</strong></div>
