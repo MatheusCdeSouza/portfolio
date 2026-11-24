@@ -15,4 +15,4 @@ Os nomes, identificadores, certificados e descrições são ilustrativos. A demo
 
 ## Abrir no computador
 
-Baixe os arquivos e abra `index.html` no navegador. A página foi feita com HTML, CSS e JavaScript e funciona sem instalação ou servidor.
+Baixe os arquivos e abra [arquivos/index.html](arquivos/index.html) no navegador. A página foi feita com HTML, CSS e JavaScript e funciona sem instalação ou servidor.
